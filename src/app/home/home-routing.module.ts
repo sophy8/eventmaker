@@ -8,11 +8,11 @@ export const loginroutes: Routes = [
         path: '', component: HomePage,
     },
     {
-        path: 'login',
+        path: 'home/login',
         component: LoginComponent
     },
     {
-        path: 'signup',
+        path: 'home/signup',
         component: SignupComponent
     }
 ];
