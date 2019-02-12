@@ -12,11 +12,28 @@
         </ion-label>
         <ion-input type="email" formControlName="email"></ion-input>
       </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.mail" >
+          <div class="error-message" *ngIf="signupForm.get('email').hasError(validation.type) && (signupForm.get('email').dirty || signupForm.get('email').touched)">
+        {{ validation.message }}
+          </div>
+        </ng-container></div>
       <ion-item>
         <ion-label position="floating">Password
         </ion-label>
         <ion-input type="password" formControlName="password"></ion-input>
       </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.password" >
+          <div class="error-message" *ngIf="signupForm.get('password').hasError(validation.type) && (signupForm.get('password').dirty || signupForm.get('password').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container></div>
+        <ion-item>
+          <ion-label position="floating">Confirm Password
+          </ion-label>
+          <ion-input type="password" formControlName="confirmPass"></ion-input>
+        </ion-item>
       <ion-button size="large" type="submit"  [disabled]="!signupForm.valid"> Add </ion-button>
     </form>
   <div class="contain">

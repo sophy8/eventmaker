@@ -12,7 +12,7 @@ export class ModalDashboardComponent implements OnInit {
 
   ngOnInit() {
   }
-dismissModal(){
-this.modalController.dismiss();
-}
+  dismissModal() {
+    this.modalController.dismiss();
+  }
 }
