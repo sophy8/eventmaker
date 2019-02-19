@@ -30,5 +30,4 @@ export class FilterSectionComponent implements OnInit {
     let new_color = this.colors[Math.floor(Math.random() * this.colors.length)];
     console.log(new_color);
   }
-  
 }
