@@ -1,4 +1,11 @@
-<ion-content>
-  <p>gyhgh</p>
   <ion-button color="primary" (click)="presentModal()"> Filters </ion-button>
-</ion-content>
+<div class="choosen" *ngIf="data">
+<div class="chosen-item">{{data.name}}</div>
+<div class="chosen-item" *ngFor="let i of data.hashtags">{{i}}</div>
+</div>
+<div *ngIf="data">
+    <app-dasboard-card [input]="data"></app-dasboard-card>
+</div>
+<div *ngIf="!data">
+    <app-dasboard-not-filtered-card></app-dasboard-not-filtered-card>
+</div>

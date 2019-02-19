@@ -10,6 +10,9 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { DashboardPage } from './dashboard.page';
 import { FilterSectionComponent } from './filter-section/filter-section.component';
 import { ModalDashboardComponent } from '../components/modal-dashboard/modal-dashboard.component';
+import { FiltersPipe } from '../filters.pipe';
+import { DasboardCardComponent } from './dasboard-card/dasboard-card.component';
+import { DasboardNotFilteredCardComponent } from './dasboard-not-filtered-card/dasboard-not-filtered-card.component';
 
 const routes: Routes = [
   {
@@ -25,7 +28,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [DashboardPage, FilterSectionComponent, ModalDashboardComponent],
+  declarations: [DashboardPage, FilterSectionComponent, ModalDashboardComponent,  FiltersPipe, DasboardCardComponent, DasboardNotFilteredCardComponent ],
   providers: [
     StatusBar,
     SplashScreen,
