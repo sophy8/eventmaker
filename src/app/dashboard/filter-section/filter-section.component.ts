@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ModalDashboardComponent } from '../../components/modal-dashboard/modal-dashboard.component';
 @Component({
   selector: 'app-filter-section',
@@ -9,25 +10,25 @@ import { ModalDashboardComponent } from '../../components/modal-dashboard/modal-
 export class FilterSectionComponent implements OnInit {
   data;
   colors = ['red', 'blue', 'green', 'yellow', 'cyan', 'orange'];
-  constructor(public modalController: ModalController) { }
+  constructor(public modalController: ModalController, private router: Router) { }
 
   ngOnInit() {
-    this.representColor();
+    //  this.representColor();
   }
   async presentModal() {
     const modal = await this.modalController.create({
-      component: ModalDashboardComponent,
-      componentProps: { value: 123 }
+      component: ModalDashboardComponent
     });
     modal.onDidDismiss()
       .then((data) => {
-        const user = data['data'];
         this.data = data['data'];
       });
+    console.log('asdfghj');
     return await modal.present();
   }
-  representColor() {
-    let new_color = this.colors[Math.floor(Math.random() * this.colors.length)];
-    console.log(new_color);
+
+  goToPage(event) {
+    console.log(event);
+    this.router.navigate([`/card-info/${event}`]);
   }
 }

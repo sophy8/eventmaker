@@ -1,9 +1,14 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>profile</ion-title>
+    <ion-title>EventMaker</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
-<ion-content padding>
-
+<ion-content padding class="container">
+  <div class="row">
+      <app-image-upload class="col-md-3 col-sm-12" (upload)="uploadImage($event)" [image]="imagePreview" [selected]="selectedFile" ></app-image-upload>
+      <app-detailed-information class="col-md-7 col-sm-12" (submited)="formSubmit($event)"></app-detailed-information>
+  </div>
 </ion-content>

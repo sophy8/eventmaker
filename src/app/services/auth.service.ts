@@ -18,9 +18,9 @@ export class AuthService {
 
   constructor(private http: HttpClient, private helper: JwtHelperService, private storage: Storage,
     private plt: Platform, private alertController: AlertController) {
-    // this.plt.ready().then(() => {
-    //   this.checkToken();
-    // });
+    this.plt.ready().then(() => {
+      this.checkToken();
+    });
   }
   checkToken() {
     this.storage.get(TOKEN_KEY).then(token => {

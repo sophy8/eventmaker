@@ -4,6 +4,7 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { dasboardItem } from '../model';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.page.html',
@@ -18,6 +19,5 @@ export class DashboardPage implements OnInit {
   ngOnInit() {
     this.item = dasboardItem;
   }
-
 
 }

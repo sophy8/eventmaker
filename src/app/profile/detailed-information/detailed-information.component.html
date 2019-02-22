@@ -1,0 +1,29 @@
+<div class="container">
+    <form [formGroup]="profileForm" (ngSubmit)="setProfile(profileForm.value)">
+        <ion-item>
+          <ion-label position="floating">Name
+          </ion-label>
+          <ion-input formControlName="name"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Surname
+            </ion-label>
+            <ion-input formControlName="surname"></ion-input>
+          </ion-item>
+        <ion-item>
+          <ion-label position="floating">Email
+          </ion-label>
+          <ion-input type="email" formControlName="email"></ion-input></ion-item>
+          <ion-item>
+              <ion-label  position="floating">Birthday</ion-label>
+              <ion-datetime formControlName="birthday" display-format="MMM DD, YYYY"></ion-datetime>
+            </ion-item>
+            <ion-item>
+                <ion-label  position="floating">Phone</ion-label>
+                <ion-input type="tel"  formControlName="phone" ></ion-input>
+              </ion-item>
+        <ion-button class="profile-submit" size="large" type="submit" [disabled]="!profileForm.valid"> Add </ion-button>
+      </form>
+        <ion-button size="large" *ngIf="showOffer">Create your offer </ion-button>
+      </div>
+

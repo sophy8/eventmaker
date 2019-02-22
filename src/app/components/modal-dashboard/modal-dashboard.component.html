@@ -1,3 +1,12 @@
 <ion-content>
   <ion-button color="primary" (click)='dismissModal()'> Close </ion-button>
+  <ion-item color="primary"> 
+    <ion-label> Search
+    </ion-label>
+    <ion-input type="text"  [(ngModel)]="query">  </ion-input>  
+  </ion-item>
+  <ul *ngIf="query">
+      <li  (click)="choose(item)" *ngFor="let item of data | filters : query">{{item.name}}</li>
+      </ul>
 </ion-content>
+

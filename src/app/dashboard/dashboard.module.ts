@@ -13,7 +13,6 @@ import { ModalDashboardComponent } from '../components/modal-dashboard/modal-das
 import { FiltersPipe } from '../filters.pipe';
 import { DasboardCardComponent } from './dasboard-card/dasboard-card.component';
 import { DasboardNotFilteredCardComponent } from './dasboard-not-filtered-card/dasboard-not-filtered-card.component';
-
 const routes: Routes = [
   {
     path: '',
@@ -28,7 +27,8 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [DashboardPage, FilterSectionComponent, ModalDashboardComponent,  FiltersPipe, DasboardCardComponent, DasboardNotFilteredCardComponent ],
+  declarations: [DashboardPage, FilterSectionComponent,
+    ModalDashboardComponent, FiltersPipe, DasboardCardComponent, DasboardNotFilteredCardComponent],
   providers: [
     StatusBar,
     SplashScreen,
@@ -36,6 +36,6 @@ const routes: Routes = [
   ],
   entryComponents: [
     ModalDashboardComponent
-]
+  ]
 })
 export class DashboardPageModule { }

@@ -1,19 +1,31 @@
 <ion-app>
-    <ion-menu contentId="content1" side="start">
-        <ion-header>
-          <ion-toolbar>
-            <ion-title>Menu</ion-title>
-          </ion-toolbar>
-        </ion-header>
-        <ion-content>
-            <ion-list>
-                <ion-item>Menu Item</ion-item>
-                <ion-item>Menu Item</ion-item>
-                <ion-item>Menu Item</ion-item>
-                <ion-item>Menu Item</ion-item>
-                <ion-item>Menu Item</ion-item>
-              </ion-list>
-        </ion-content>
-      </ion-menu>
+  <ion-menu contentId="content1" side="start">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item [routerLink]="'/profile/'" routerDirection="forward">
+          <ion-icon name="person" slot="start" role="img" class="hydrated" aria-label="person"></ion-icon>
+          Profile
+        </ion-item>
+        <ion-item [routerLink]="'/dashboard/'" >
+          <ion-icon name="home" slot="start" role="img" class="hydrated" aria-label="home"></ion-icon>
+          Dasboard
+        </ion-item>
+        <ion-item>
+          <ion-icon name="settings" slot="start" role="img" class="hydrated" aria-label="settings"></ion-icon>
+          Settings
+        </ion-item>
+        <ion-item>
+          <ion-icon name="chatbubbles" slot="start" role="img" class="hydrated" aria-label="chatbubbles"></ion-icon>
+          Message
+        </ion-item>
+        <ion-item>Log out</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
   <ion-router-outlet id="content1" main></ion-router-outlet>
 </ion-app>

@@ -13,7 +13,7 @@ export class SignupComponent implements OnInit {
   constructor(private loadingController: LoadingController, private activateRoute: ActivatedRoute,
     private router: Router, private fb: FormBuilder) { }
   signupForm: FormGroup;
-
+  validation_messages;
   ngOnInit() {
     this.signupForm = this.fb.group({
       name: [null, Validators.required],
@@ -24,12 +24,14 @@ export class SignupComponent implements OnInit {
       confirmPass: [null, Validators.compose([
         UsernameValidator.passwordValid(), Validators.required
       ])]
-    }, {validator: UsernameValidator.checkPasswords(this.signupForm) });
+    }, {validator: UsernameValidator.checkPasswords });
+    this.validation_messages = UsernameValidator.errorSignUp();
+
   }
   async signUp(form: NgForm) {
     const loading = await this.loadingController.create({
-      message: "Loading..."
+      message: 'Loading...'
     });
-    console.log(form);
+  this.router.navigate(['/dashboard']);
   }
 }

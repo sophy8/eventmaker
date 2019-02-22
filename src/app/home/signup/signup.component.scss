@@ -30,6 +30,9 @@ ion-button{
 }
 ion-input{
         --color:white;
+        input{
+            color: white;
+        }
     }
 ion-label{
     --color: white;
@@ -40,4 +43,10 @@ ion-label{
 }
 .contain{
     display: flex;
+}
+.validation-errors {
+    width: 90%;
+    margin-top: 5px;
+    margin-left: 5%;
+    color: red;
 }

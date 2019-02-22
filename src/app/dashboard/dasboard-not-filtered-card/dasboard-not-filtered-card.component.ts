@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { dasboardItem } from '../../model';
 
 @Component({
@@ -8,10 +8,17 @@ import { dasboardItem } from '../../model';
 })
 export class DasboardNotFilteredCardComponent implements OnInit {
   item;
+  @Output() gotopage: EventEmitter<any> = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
     this.item = dasboardItem;
   }
 
+  goToPage(event) {
+this.gotopage.emit(event.el.id);
+    //   let idItem = event.target.id;
+    //   console.log(event.target.id)
+    //  this.router.navigate([`/card-info/${idItem}`]);
+  }
 }
