@@ -1,6 +1,6 @@
-<div id="{{ i.id }}" *ngFor="let i of item"  >
-    <div *ngIf="i.show">
-    <ion-card>
+<div id="{{ i.id }}" *ngFor="let i of item" (click)="goToPage(card)" >
+    <div  *ngIf="i.show">
+    <ion-card #card id="{{ i.id }}">
         <ion-card-header>
           <ion-card-subtitle>{{i.hashtags}}</ion-card-subtitle>
           <ion-card-title>{{i.name}}</ion-card-title>

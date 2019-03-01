@@ -15,6 +15,6 @@ export class CardInfoPage implements OnInit {
   getItem() {
     this.service.getEvent().subscribe((res) => {
       this.data = res;
-    })
+    });
   }
 }

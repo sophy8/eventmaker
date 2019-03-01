@@ -4,7 +4,7 @@
 <div class="chosen-item" *ngFor="let i of data.hashtags">{{i}}</div>
 </div>
 <div *ngIf="data">
-    <app-dasboard-card [input]="data"></app-dasboard-card>
+    <app-dasboard-card [input]="data" (gotopage)="goToPage($event)"></app-dasboard-card>
 </div>
 <div *ngIf="!data">
     <app-dasboard-not-filtered-card (gotopage)="goToPage($event)"></app-dasboard-not-filtered-card>
